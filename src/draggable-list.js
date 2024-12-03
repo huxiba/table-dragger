@@ -56,7 +56,6 @@ export default class Dragger {
   onDrag () {
     css(document.body, { overflow: 'hidden' });
     const barWidth = getScrollBarWidth();
-    console.log(barWidth,'barWidth');
     if (barWidth) {
       css(document.body, { 'padding-right': `${barWidth + bodyPaddingRight}px` });
     }
@@ -143,7 +142,7 @@ export default class Dragger {
       (cell, index) => {
         const w = cell.getBoundingClientRect().width;
         const t = fakeTables[index];
-        css(t, { width: `${w}px` });
+        css(t, { width: `${w}px`, minWidth: null });
         css(t.rows[0].children[0], { width: `${w}px` });
       }
     );
